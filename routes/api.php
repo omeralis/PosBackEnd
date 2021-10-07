@@ -27,7 +27,11 @@ Route::post('/editgroup','GroupsController@EditGroups');
 Route::get('/item','ItemsController@getItem');
 Route::post('/item','ItemsController@postItem');
 Route::post('/edititem','ItemsController@EditItems');
-/*----Route group----*/
+/*----Route supplier----*/
 Route::get('/supplier','SuppliersController@getSupplier');
 Route::post('/supplier','SuppliersController@postSupplier');
 Route::post('/editsupplier','SuppliersController@EditSupplier');
+/*----Route customer----*/
+Route::get('/customer','CustomersController@getCustomer');
+Route::post('/customer','CustomersController@postCustomer');
+Route::post('/editcustomer','CustomersController@EditCustomer');
