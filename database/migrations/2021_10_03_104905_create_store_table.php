@@ -13,11 +13,12 @@ class CreateStoreTable extends Migration
      */
     public function up()
     {
-        Schema::create('store', function (Blueprint $table) {
+        Schema::create('stores', function (Blueprint $table) {
             $table->id();
             $table->string('purchaseNo');
             $table->date('purchaseDate');
             $table->integer('itemNo');
+            $table->integer('supplierNo');
             $table->integer('quantity');
             $table->integer('alarmQuantity');
             $table->integer('cost');
@@ -34,6 +35,6 @@ class CreateStoreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('store');
+        Schema::dropIfExists('stores');
     }
 }

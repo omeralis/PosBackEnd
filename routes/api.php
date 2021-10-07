@@ -35,3 +35,7 @@ Route::post('/editsupplier','SuppliersController@EditSupplier');
 Route::get('/customer','CustomersController@getCustomer');
 Route::post('/customer','CustomersController@postCustomer');
 Route::post('/editcustomer','CustomersController@EditCustomer');
+/*----Route customer----*/
+Route::get('/store','StoreController@getStore');
+Route::post('/store','StoreController@postStore');
+// Route::post('/editstore','StoreController@EditStore');
