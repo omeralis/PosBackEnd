@@ -27,3 +27,7 @@ Route::post('/editgroup','GroupsController@EditGroups');
 Route::get('/item','ItemsController@getItem');
 Route::post('/item','ItemsController@postItem');
 Route::post('/edititem','ItemsController@EditItems');
+/*----Route group----*/
+Route::get('/supplier','SuppliersController@getSupplier');
+Route::post('/supplier','SuppliersController@postSupplier');
+Route::post('/editsupplier','SuppliersController@EditSupplier');

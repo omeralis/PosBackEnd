@@ -7,7 +7,7 @@ use App\Items;
 class ItemsController extends Controller
 {
     public function getItem(){
-        // $item = Items::all('item-name' , 'group-no');
+        // $item = Items::all('id' ,'itemName' , 'groupNo');
         $item =  Items::with('Groups')->get();
         return  response()->json($item, 200);
     }

@@ -22,7 +22,7 @@ class CreateSalesTable extends Migration
             $table->integer('customerNo');
             $table->integer('quantity');
             $table->integer('price');
-            $table->text('other');
+            $table->text('other')->nullable();;
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class CreateStoreTable extends Migration
             $table->integer('alarmQuantity');
             $table->integer('cost');
             $table->integer('priceItem');
-            $table->text('other');
+            $table->text('other')->nullable();;
             $table->timestamps();
         });
     }

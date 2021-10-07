@@ -11,7 +11,7 @@ class Items extends Model
 {
     // protected $guarded = [];
     protected $fillable =[
-        "itemName" , "groupNo" 
+      "id" , "itemName" , "groupNo" 
     ];
     public function Groups(){
         return $this->belongsTo(Groups::class , 'groupNo');

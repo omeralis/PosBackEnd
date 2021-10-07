@@ -17,7 +17,7 @@ class CreateSuppliersTable extends Migration
             $table->id(); 
             $table->string('supplierName');
             $table->string('phone');
-            $table->text('other');
+            $table->text('other')->nullable();;
             $table->timestamps();
         });
     }
