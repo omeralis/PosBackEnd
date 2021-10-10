@@ -38,4 +38,4 @@ Route::post('/editcustomer','CustomersController@EditCustomer');
 /*----Route customer----*/
 Route::get('/store','StoreController@getStore');
 Route::post('/store','StoreController@postStore');
-// Route::post('/editstore','StoreController@EditStore');
+Route::post('/editstore','StoreController@EditStore');

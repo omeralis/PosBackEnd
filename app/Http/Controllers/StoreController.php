@@ -19,4 +19,16 @@ class StoreController extends Controller
         }
         return response()->json(['message'=> 'error'],404);
     }
+    public function EditStore(Request $request){
+        $id = $request->id;  
+        $store = Store::where('id', $id)->first();
+        $data = $request->all();
+        if (isset($store)) {
+            $store->update($data);
+            return response()->json($store,200);
+        }else {
+        return response()->json(['message'=> 'error'],404);            
+         }
+        
+    }
 }
