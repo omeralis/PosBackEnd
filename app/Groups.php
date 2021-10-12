@@ -13,7 +13,7 @@ class Groups extends Model
     ];
 
     public function Items(){
-        return $this->hasMany(Items::class);
+        return $this->hasMany(Items::class , 'groupNo');
     }
     public function GroupsSales(){
         return $this->belongsTo(Sales::class);

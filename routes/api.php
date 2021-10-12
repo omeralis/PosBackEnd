@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get("group" , [GroupsController::class , 'getGroups']);
 /*----Route group----*/
 Route::get('/group','GroupsController@getGroups');
+Route::get('/itemofgroup','GroupsController@getItemOfGroups');
 Route::post('/group','GroupsController@postGroups');
 Route::post('/editgroup','GroupsController@EditGroups');
 /*----Route group----*/
@@ -39,3 +40,6 @@ Route::post('/editcustomer','CustomersController@EditCustomer');
 Route::get('/store','StoreController@getStore');
 Route::post('/store','StoreController@postStore');
 Route::post('/editstore','StoreController@EditStore');
+/*----Route customer----*/
+Route::get('/sale','SalesController@getSales');
+Route::post('/sale','SalesController@postSales');

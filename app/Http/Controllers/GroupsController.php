@@ -10,6 +10,11 @@ class GroupsController extends Controller
         $group = Groups::all('id','nameGroup');
         return response()->json($group,200);
     }
+    public function getItemOfGroups(){
+        $group = Groups::with('Items')->get();
+        return response()->json($group,200);
+    }
+    
     public function postGroups(Request $request){
         $data =  $request->all();
         // $this->validate($request, [
