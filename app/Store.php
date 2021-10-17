@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Items;
 use App\Sales;
 use App\Supplier;
-
+use App\Orders;
 class Store extends Model
 {
 
@@ -21,6 +21,10 @@ class Store extends Model
     }
     public function SalesStore(){
         return $this->belongsTo(Sales::class);
+    }
+    public function StoreOrder()
+    {
+        return $this->hasMany(Orders::class );
     }
 
 }

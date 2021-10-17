@@ -36,10 +36,17 @@ Route::post('/editsupplier','SuppliersController@EditSupplier');
 Route::get('/customer','CustomersController@getCustomer');
 Route::post('/customer','CustomersController@postCustomer');
 Route::post('/editcustomer','CustomersController@EditCustomer');
-/*----Route customer----*/
+/*----Route store----*/
 Route::get('/store','StoreController@getStore');
 Route::post('/store','StoreController@postStore');
 Route::post('/editstore','StoreController@EditStore');
-/*----Route customer----*/
+/*----Route sale----*/
 Route::get('/sale','SalesController@getSales');
 Route::post('/sale','SalesController@postSales');
+/*----Route order----*/
+Route::get('/order','OrdersController@getOrder');
+Route::post('/order','OrdersController@postOrder');
+/*----Route customer----*/
+Route::get('/orderline','orderlineController@getOrderline');
+Route::get('/order','orderlineController@getOrder');
+Route::post('/orderline','orderlineController@postOrderline');
