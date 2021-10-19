@@ -11,7 +11,6 @@ class orderlineController extends Controller
     public function getOrderline(Request $request)
     {
         $order = order_lines::with('LinesOrder')->get();
-        // $order = order_lines::all();
         return response()->json($order,200);
     }
     public function getOrder(Request $request)
@@ -44,31 +43,4 @@ class orderlineController extends Controller
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //     $data =  $request->all();
-    //     if ($data) {
-    //         foreach($data as $order)
-    //         {
-    //             DB::table('users')->insert($data);
-    //             // $order = order_lines::insert(data);
-    //         }
-    //         return response()->json($order,200);
-    //     }
-    //     return response()->json(['message'=> 'error'],404);
-        
-    // }
 
