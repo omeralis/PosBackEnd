@@ -8,7 +8,7 @@ class ItemsController extends Controller
 {
     public function getItem(){
         // $item = Items::all('id' ,'itemName' , 'groupNo');
-        $item =  Items::with('Groups')->get();
+        $item =  Items::with('Groups')->with('StoreItem')->get();
         return  response()->json($item, 200);
     }
     public function postItem(Request $request){

@@ -24,7 +24,7 @@ class orderlineController extends Controller
         try {
         if ($request->isMethod('post')) {
            $OrderData = $request->all();
-           foreach ($OrderData['data'] as $key => $value) {
+           foreach ($OrderData['data '] as $key => $value) {
               $order = new order_lines;
               $order->orderId = $value['orderId'];
               $order->itemNo= $value['itemNo'];
@@ -40,6 +40,28 @@ class orderlineController extends Controller
             return response()->json(['error' => $e->getMessage()]);
         }
 
+    }
+
+    public function postOrdersave(Request $request){
+        $data =  $request->all('customerNo' , 'saleDate' ,'storeNo');
+        if ($data) {
+            $order = Orders::create($data);
+        }
+        if ($request->isMethod('post')) {
+            // return $orderId;
+            $OrderData = $request->all();
+            foreach ($OrderData['data'] as $key => $value) {
+               $order = new order_lines;
+               $orderId =  Orders::all(['id'])->last();
+               $order->orderId = $value[$orderId ];
+               $order->itemNo= $value['itemNo'];
+               $order->quantity= $value['quantity'];
+               $order->unitPrice= $value['unitPrice'];
+               $order->subTotal= $value['subTotal'];
+               $order->save();
+            }
+            // return response()->json(['message'=>'Successfuly']);
+         }
     }
 }
 

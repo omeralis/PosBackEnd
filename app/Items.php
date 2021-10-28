@@ -17,7 +17,7 @@ class Items extends Model
         return $this->belongsTo(Groups::class , 'groupNo');
     }
     public function StoreItem(){
-        return $this->hasMany(Store::class);
+        return $this->hasMany(Store::class , 'itemNo');
     }
     public function SaleItem(){
         return $this->belongsTo(Sales::class);

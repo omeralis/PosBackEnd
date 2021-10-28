@@ -11,7 +11,7 @@ class GroupsController extends Controller
         return response()->json($group,200);
     }
     public function getItemOfGroups(){
-        $group = Groups::with('Items')->get();
+        $group = Groups::with('Items')->with('Items.StoreItem')->get();
         return response()->json($group,200);
     }
     
