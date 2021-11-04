@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSalesTable extends Migration
+class CreatePurchaseLinesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
+        Schema::create('purchase_lines', function (Blueprint $table) {
             $table->id();
-            $table->date('saleDate');
-            $table->integer('storeNo');
-            $table->integer('itemNo');
-            $table->integer('groupNo');
-            $table->integer('customerNo');
+            $table->integer('purchaseId');
+            $table->string('item');
             $table->integer('quantity');
-            $table->integer('price');
-            $table->text('other')->nullable();;
+            $table->integer('cost');
             $table->timestamps();
         });
     }
@@ -34,6 +30,6 @@ class CreateSalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales');
+        Schema::dropIfExists('purchase_lines');
     }
 }

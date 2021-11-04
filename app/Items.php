@@ -3,23 +3,27 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Units;
 use App\Store;
 use App\Groups;
-use App\Sales;
-
+use App\order_lines;
 class Items extends Model
 {
-    // protected $guarded = [];
-    protected $fillable =[
-      "id" , "itemName" , "groupNo" 
-    ];
+    protected $guarded = [];
+    // protected $fillable =[
+    //   "id" , "itemName" , "groupNo" 
+    // ];
     public function Groups(){
         return $this->belongsTo(Groups::class , 'groupNo');
     }
-    public function StoreItem(){
-        return $this->hasMany(Store::class , 'itemNo');
+    public function UnitsItem(){
+        return $this->belongsTo(Units::class , 'unitItem');
     }
-    public function SaleItem(){
-        return $this->belongsTo(Sales::class);
+    public function ItemPurchase(){
+        return $this->hasMany(Purchase::class , 'item');
     }
+
+    public function LinesOrderItem(){
+        return $this->hasMany(order_lines::class , 'itemNo');
+  }
 }

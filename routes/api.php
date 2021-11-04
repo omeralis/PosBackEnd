@@ -24,10 +24,18 @@ Route::get('/group','GroupsController@getGroups');
 Route::get('/itemofgroup','GroupsController@getItemOfGroups');
 Route::post('/group','GroupsController@postGroups');
 Route::post('/editgroup','GroupsController@EditGroups');
-/*----Route group----*/
+/*----Route Units----*/
+Route::get('/unit','UnitsController@getUnits');
+Route::post('/unit','UnitsController@postUnits');
+Route::post('/editunit','UnitsController@EditIUnits');
+/*----Route item----*/
 Route::get('/item','ItemsController@getItem');
 Route::post('/item','ItemsController@postItem');
 Route::post('/edititem','ItemsController@EditItems');
+/*----Route store----*/
+Route::get('/store','StoreController@getStore');
+Route::post('/store','StoreController@postStore');
+Route::post('/editstore','StoreController@EditStore');
 /*----Route supplier----*/
 Route::get('/supplier','SuppliersController@getSupplier');
 Route::post('/supplier','SuppliersController@postSupplier');
@@ -36,13 +44,12 @@ Route::post('/editsupplier','SuppliersController@EditSupplier');
 Route::get('/customer','CustomersController@getCustomer');
 Route::post('/customer','CustomersController@postCustomer');
 Route::post('/editcustomer','CustomersController@EditCustomer');
-/*----Route store----*/
-Route::get('/store','StoreController@getStore');
-Route::post('/store','StoreController@postStore');
-Route::post('/editstore','StoreController@EditStore');
-/*----Route sale----*/
-Route::get('/sale','SalesController@getSales');
-Route::post('/sale','SalesController@postSales');
+/*----Route purchase----*/
+Route::get('/purchase','PurchaselinesController@getPurchases');
+Route::post('/purchase','PurchaselinesController@postPurchases');
+Route::post('/editpurchase','PurchaselinesController@EditPurchases');
+
+
 /*----Route order----*/
 Route::get('/order','OrdersController@getOrder');
 Route::post('/order','OrdersController@postOrder');
@@ -51,3 +58,4 @@ Route::get('/orderline','orderlineController@getOrderline');
 Route::get('/order','orderlineController@getOrder');
 Route::post('/orderline','orderlineController@postOrderline');
 Route::post('/ordersave','orderlineController@postOrdersave');
+Route::post('/invoic','orderlineController@InvoicSalesOrder');

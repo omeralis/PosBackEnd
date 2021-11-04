@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Items;
-use App\Sales;
 
 class Groups extends Model
 {
@@ -14,8 +13,5 @@ class Groups extends Model
 
     public function Items(){
         return $this->hasMany(Items::class , 'groupNo');
-    }
-    public function GroupsSales(){
-        return $this->belongsTo(Sales::class);
     }
 }

@@ -17,6 +17,13 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->string('itemName');
             $table->integer('groupNo');
+            $table->string('unitItem');
+            $table->integer('Parcode');
+            $table->integer('alarmQuantity');
+            $table->integer('special')->nullable();;
+            $table->integer('priceItem');
+            $table->string('Image')->nullable();;
+
             $table->timestamps();
         });
     }

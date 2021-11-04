@@ -7,7 +7,7 @@ use App\Store;
 class StoreController extends Controller
 {
     public function getStore(){
-        $store =  Store::with('ItemsStore')->with('SupplierStore')->get();
+        $store =  Store::all();
         // $store =  Store::all();
         return  response()->json($store, 200);
     }
@@ -31,4 +31,5 @@ class StoreController extends Controller
          }
         
     }
+
 }

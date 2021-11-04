@@ -19,6 +19,6 @@ class Orders extends Model
         return $this->belongsTo(Store::class ,'storeNo');
     }
     public function orderLines(){
-        return $this->belongsTo(order_lines::class , 'orderId');
+        return $this->hasMany(order_lines::class , 'orderId');
     }
 }

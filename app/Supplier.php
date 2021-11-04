@@ -9,7 +9,7 @@ class Supplier extends Model
     protected $fillable =[
        "id" , "supplierName" , "phone" ,"other"
     ];
-    public function Store(){
-        return $this->hasMany(Store::class);
+    public function SupplierPurchase(){
+        return $this->hasMany(Purchase::class , 'supplier');
     }
 }
