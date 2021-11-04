@@ -29,6 +29,7 @@ class PurchaselinesController extends Controller
                     $purchase->item= $value['item'];
                     $purchase->quantity= $value['quantity'];
                     $purchase->cost= $value['cost'];
+                    $purchase->subTotal= $value['subTotal'];
                     $purchase->save();
                 }
                 // return response($purchases->id);

@@ -19,6 +19,7 @@ class CreatePurchaseLinesTable extends Migration
             $table->string('item');
             $table->integer('quantity');
             $table->integer('cost');
+            $table->integer('subTotal');
             $table->timestamps();
         });
     }
