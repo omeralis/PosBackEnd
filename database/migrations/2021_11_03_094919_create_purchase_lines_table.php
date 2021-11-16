@@ -15,7 +15,8 @@ class CreatePurchaseLinesTable extends Migration
     {
         Schema::create('purchase_lines', function (Blueprint $table) {
             $table->id();
-            $table->integer('purchaseId');
+            $table->bigInteger('purchaseId')->unsigned();
+            $table->foreign('purchaseId')->references('id')->on('purchases')->onDelete('cascade');
             $table->string('item');
             $table->integer('quantity');
             $table->integer('cost');

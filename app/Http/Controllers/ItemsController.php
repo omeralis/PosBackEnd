@@ -13,6 +13,16 @@ class ItemsController extends Controller
     }
     public function postItem(Request $request){
         $data = $request->all();
+        $this->validate($request, [
+            'Image'  => 'required|image|mimes:jpg,jpeg,png,gif',
+           ]);
+            $Uploadimage = $request->file('Image');
+            if ($Uploadimage) {
+                $imageName =$request->itemName.rand() . '.' . $Uploadimage->getClientOriginalExtension();
+                $path = 'images';
+                $Uploadimage->move(public_path($path), $imageName);
+                $data['Image']=url('/').'/'.$path.'/'.$imageName;
+            }
         if ($data) {
             $item = Items::create($data);
             return response()->json($item, 200);

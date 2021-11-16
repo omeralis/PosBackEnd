@@ -46,8 +46,10 @@ Route::post('/customer','CustomersController@postCustomer');
 Route::post('/editcustomer','CustomersController@EditCustomer');
 /*----Route purchase----*/
 Route::get('/purchase','PurchaselinesController@getPurchases');
+Route::get('/purchaseline','PurchaselinesController@getPurchaseslines');
 Route::post('/purchase','PurchaselinesController@postPurchases');
 Route::post('/editpurchase','PurchaselinesController@EditPurchases');
+// Route::post('/qutstor','PurchaselinesController@getQutStor');
 
 
 /*----Route order----*/
@@ -59,3 +61,4 @@ Route::get('/order','orderlineController@getOrder');
 Route::post('/orderline','orderlineController@postOrderline');
 Route::post('/ordersave','orderlineController@postOrdersave');
 Route::post('/invoic','orderlineController@InvoicSalesOrder');
+Route::post('/getqut','orderlineController@getQut');

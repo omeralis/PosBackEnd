@@ -13,6 +13,17 @@ class PurchaselinesController extends Controller
         $purchase = Purchase::with('PurchaseStore')->with('PurchaseSupplier')->with('PurchaseLines')->with('PurchaseLines.PurchaseItem')->get();
         return response()->json($purchase,200);
     }
+    public function getPurchaseslines(Request $request)
+    {
+        $purchase = Purchase_lines::with('PurchaseItem')->with('LinesPurchase')->with('LinesPurchase.PurchaseStore')->with('LinesPurchase.PurchaseSupplier')->get();
+        return response()->json($purchase,200);
+    }
+    // public function getQutStor(Request $request){
+    //     $item = $request->item;
+    //     $store = $request->store;
+    //     $qut = Purchase_lines::where('item' , $item )->where('LinesPurchase.store' , $store )->sum('quantity');
+    //     return response()->json($qut,200);
+    // }
     public function postPurchases(Request $request)
     {
       

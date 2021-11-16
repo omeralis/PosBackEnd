@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\order_lines;
 use App\Orders;
 use App\Items;
+use App\Purchase_lines;
+use App\Purchase;
 use DB;
 use DateTime;
 use Validator;
@@ -21,7 +23,11 @@ class orderlineController extends Controller
         $order = Orders::all()->last();
         return response()->json($order,200);
     }
-
+    public function getQut(Request $request){
+        $item = $request->item;
+         $qut = Purchase_lines::where('item' , $item )->sum('quantity');
+        return response()->json($qut,200);
+    }
     public function postOrderline(Request $request)
     {
         try {
