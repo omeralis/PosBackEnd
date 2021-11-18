@@ -49,7 +49,7 @@ Route::get('/purchase','PurchaselinesController@getPurchases');
 Route::get('/purchaseline','PurchaselinesController@getPurchaseslines');
 Route::post('/purchase','PurchaselinesController@postPurchases');
 Route::post('/editpurchase','PurchaselinesController@EditPurchases');
-// Route::post('/qutstor','PurchaselinesController@getQutStor');
+Route::post('/qutstor','PurchaselinesController@getQutStor');
 
 
 /*----Route order----*/
